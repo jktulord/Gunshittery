@@ -8,19 +8,30 @@ namespace Assets.Scripts.ArtifactScripts
 {
     public enum EffectKind
     {
-        BaseDamage, DamageModifier, 
-        BaseForce, ForceModifier,
-        BulletDelayModifier, 
-        Accuracy,
-        Bullets,
-        BulletSizeModifier,
-        Ricochet,
+        // Basic
+        Dmg, DmgMod,       
+        BPSMod,
+        Accuracy, Stability,
+        Bullets, Ricochet,
+        SizeMod, ForceMod,
 
-        ChangeToAuto, ChangeToSemi,
-        ChangeToShootgun,
-        ChangeToPeashoot,
-        ChangeToNormal,
-        
+        // Advanced
+        Clip, ClipMod,
+        ReloadMod,
+
+        //Types
+        Auto, Semi, Burst, Cylinder, SlydingShutter,
+
+        //Perks
+        Peashot, Shotgun,
+        LazerSight, SuperSight,
+        SelfShooter, Freezer,
+        BulletThrower,
+        Dicer,
+        PoweredTrigger, PoweredReload,
+        Nails,
+        ClipRegen, IncreasingSize,
+
         ImmuneToSelfHurt,
     }
 

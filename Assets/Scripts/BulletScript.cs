@@ -1,15 +1,25 @@
 using Assets.Scripts;
 using Assets.Scripts.Entities;
+using Assets.Scripts.Entities.Perks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    //private Rigidbody2D rb;
+
     public GameObject Author;
     public Gun Gun;
 
+    public bool IfShootPowered = false;
+    public bool IfClipPowered = false;
     public int RicochetAmount = 0;
+
+    public void Start()
+    {
+        //rb = GetComponent<Rigidbody2D>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,5 +47,11 @@ public class BulletScript : MonoBehaviour
             else
                 RicochetAmount -= 1;
         }
+    }
+
+    public void Update()
+    {
+        if (Gun.Perks.IndexOf(PerkKind.IncreasingSize) != -1)
+            transform.localScale += new Vector3(1, 1) * Time.deltaTime;
     }
 }

@@ -24,10 +24,10 @@ public class TextSpawner : MonoBehaviour
         ActiveTextLines = new List<TMP_Text>();
     }
 
-    public void ThrowAText(string text, Vector3 directionVector)
+    public void ThrowAText(string text, Vector3 directionVector, Color color)
     {
         TMP_Text ThrownTextLine = Instantiate(TextLinePrefab, Canvas).GetComponent<TMP_Text>();
-        //ThrownTextLine.color = Color;
+        ThrownTextLine.color = color;
         ThrownTextLine.text = text;
         Vector3 RanVect = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f)) ;
         ThrownTextLine.transform.position = cam.WorldToScreenPoint(transform.position + RanVect);

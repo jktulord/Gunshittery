@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9B91D2A4-1E27-034A-3B2D-53617580D30B}</ProjectGuid>
+    <ProjectGuid>{E8943429-FA39-D8BD-B997-64E4A42DA67C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -54,47 +54,69 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ArtifactScripts\GetArtifact.cs" />
+    <Compile Include="Assets\Scripts\Entities\Perks\PerkKind.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\Spawners\Spawner.cs" />
     <Compile Include="Assets\Scripts\Entities\Player\PlayerGun.cs" />
     <Compile Include="Assets\Scripts\Entities\DamagableBody.cs" />
     <Compile Include="Assets\Scripts\Enviroment\Spawners\WaveTemplate.cs" />
     <Compile Include="Assets\Scripts\Enviroment\ObjectPoolTrigger.cs" />
     <Compile Include="Assets\Scripts\Entities\Player\ArtifactPlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Entities\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\ArtifactScripts\UI\EffectListUIPrefabScript.cs" />
     <Compile Include="Assets\Scripts\Entities\TextSpawner.cs" />
     <Compile Include="Assets\ZoomScript.cs" />
+    <Compile Include="Assets\Scripts\Entities\Player\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\Doors\DoorGroupControl.cs" />
+    <Compile Include="Assets\Scripts\ArtifactScripts\Generation\Generate.cs" />
     <Compile Include="Assets\Scripts\Entities\Enemy\EnemyGun.cs" />
+    <Compile Include="Assets\Scripts\ArtifactScripts\Generation\EffectPriceLists.cs" />
     <Compile Include="Assets\Scripts\ArtifactScripts\ObjectArtifact.cs" />
     <Compile Include="Assets\Scripts\Entities\Player\Lazer.cs" />
     <Compile Include="Assets\Scripts\Enviroment\Spawners\AdvancedSpawnerController.cs" />
+    <Compile Include="Assets\Scripts\ArtifactScripts\Generation\Tier1Artifacts.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\Doors\DoorScript.cs" />
     <Compile Include="Assets\Scripts\TextLineScript.cs" />
     <Compile Include="Assets\Scripts\ArtifactScripts\ArtifactStats.cs" />
-    <Compile Include="Assets\Scripts\Entities\Gun.cs" />
+    <Compile Include="Assets\Scripts\Entities\Guns\Gun.cs" />
     <Compile Include="Assets\Scripts\BulletScript.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\Spawners\SimpleSpawnerController.cs" />
+    <Compile Include="Assets\Scripts\ArtifactScripts\UI\EffectUIPrefabScript.cs" />
+    <Compile Include="Assets\Scripts\Entities\Guns\CopyGunExt.cs" />
     <Compile Include="Assets\Scripts\Enviroment\BasicTrigger.cs" />
     <Compile Include="Assets\Scripts\ArtifactScripts\Effect.cs" />
+    <Compile Include="Assets\Scripts\ArtifactScripts\UI\UIPositionAdjuster.cs" />
+    <Compile Include="Assets\GunStatPanel.cs" />
     <Compile Include="Assets\Scripts\Entities\Enemy\EnemyMoveAi.cs" />
     <Compile Include="Assets\Scripts\Values\LimitedValue.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\Doors\DoorScript.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\Spawners\SimpleSpawnerController.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\Spawners\Spawner.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\Doors\DoorGroupControl.cs" />
+    <Compile Include="Assets\Scripts\ArtifactScripts\Generation\GenerateTier.cs" />
+    <Compile Include="Assets\Scripts\Entities\Guns\GunStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Fonts\VT323\COPYRIGHT.txt" />
+    <None Include="Assets\Fonts\Psychic Force 2012 Monospaced\COPYRIGHT.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Fonts\Press Start 2P\COPYRIGHT.txt" />
+    <None Include="Assets\Fonts\Thintel\COPYRIGHT.txt" />
+    <None Include="Assets\Fonts\VT323\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Fonts\Thintel\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Fonts\Press Start 2P\README.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Fonts\VT323\README.txt" />
+    <None Include="Assets\Fonts\Pixel Times\COPYRIGHT.txt" />
+    <None Include="Assets\Fonts\Press Start 2P\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -775,15 +797,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{9BC29786-C96A-2D17-D7CB-4F94B87A159A}</Project>
+      <Project>{E92DD12C-41BA-5F52-4D56-63881FDF1B06}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{DCB9381D-C2A2-6536-582C-28DBDDF0805B}</Project>
+      <Project>{23C33B13-5163-6ECD-A7D7-AD9CFA1D0203}</Project>
       <Name>AstarPathfindingProject</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{46B6F661-9277-911B-DF2E-9797B8FA0136}</Project>
+      <Project>{9ECB9AD2-6040-AED2-1517-8AEF1E48E9BB}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>

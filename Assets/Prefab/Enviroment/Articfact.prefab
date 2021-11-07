@@ -97,9 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Number: 0
-  IfRandom: 0
+  IfRandom: 1
+  State: 0
   Canvas: {fileID: 0}
-  TextlinePrefab: {fileID: 1916923594084421252, guid: f178eab487c0e9d43862ad1c80b240aa, type: 3}
+  TextlinePrefab: {fileID: 3779723343210596078, guid: 69fe061bea6190548bcbb843c78b9a52, type: 3}
+  EffectListUIPrefab: {fileID: 2596594234630590058, guid: 292d015232e78974297d8049f067f922, type: 3}
 --- !u!61 &6666896024284506197
 BoxCollider2D:
   m_ObjectHideFlags: 0

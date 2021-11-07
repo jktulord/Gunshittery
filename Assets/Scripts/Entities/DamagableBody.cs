@@ -10,6 +10,11 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
+    public enum StatusEffects
+    {
+        Bleed, Freeze, 
+    }
+
     public class DamagableBody : MonoBehaviour
     {
         private TextSpawner TextSpawner;
@@ -51,12 +56,16 @@ namespace Assets.Scripts
                 return;
 
             Gun gun = bullet.Gun;
-
-            Hp.Value -= gun.Damage;
+            float damage = gun.Damage;
+            if (bullet.IfClipPowered == true)
+                damage *= 2;
+            if (bullet.IfShootPowered == true)
+                damage *= 2;
+            Hp.Value -= damage;
             hp = Hp.Value;
 
             Vector3 Direction = gameObject.transform.position - bullet.transform.position;
-            TextSpawner.ThrowAText("-"+gun.Damage, Direction.normalized * 10);
+            TextSpawner.ThrowAText("-" + damage, Direction.normalized * 10, Color.white);
             
         }
 
