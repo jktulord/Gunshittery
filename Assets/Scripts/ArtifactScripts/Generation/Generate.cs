@@ -9,7 +9,7 @@ namespace Assets.Scripts.ArtifactScripts.Generation
 {
     public class Generate
     {
-        public static Dictionary<EffectKind, float> Effects(float budget, int Basic, int Advanced, int Perk, int Type)
+        public static Dictionary<EffectKind, float> Effects(float budget, int Basic = 0, int Advanced = 0, int Perk = 0, int Type = 0)
         {
             Dictionary<EffectKind, float> Effects = new Dictionary<EffectKind, float>();
             int type = Random.Range(0,5);
@@ -19,10 +19,12 @@ namespace Assets.Scripts.ArtifactScripts.Generation
 
             for (int i = 0; i < Basic - 1; i++)
             {
-                (kind, EffectValue) = BasicEffect(CurrentBudget, new List<EffectKind>(Effects.Keys));
+                float BudgetSub;
+                (kind, EffectValue, BudgetSub) = BasicEffect(CurrentBudget * 0.5f, new List<EffectKind>(Effects.Keys));
+                CurrentBudget -= BudgetSub; 
                 Effects.Add(kind, EffectValue);
             }
-            (kind, EffectValue) = BasicEffect(CurrentBudget, new List<EffectKind>(Effects.Keys));
+            (kind, EffectValue, CurrentBudget) = BasicEffect(CurrentBudget, new List<EffectKind>(Effects.Keys));
             Effects.Add(kind, EffectValue);
             /*
             switch (type)
@@ -68,7 +70,7 @@ namespace Assets.Scripts.ArtifactScripts.Generation
             return Effects;
         }
 
-        public static (EffectKind, float) BasicEffect(float budget, List<EffectKind> Effects)
+        public static (EffectKind, float, float) BasicEffect(float budget, List<EffectKind> Effects)
         {
             Dictionary<EffectKind, float> PriceList = EffectPriceList.Basic();
             int i = Random.Range(0, PriceList.Count);
@@ -77,10 +79,10 @@ namespace Assets.Scripts.ArtifactScripts.Generation
                 return BasicEffect(budget, Effects);
 
             float value = budget / PriceList[kind];
-            return (kind, value);
+            return (kind, value, budget);
         }
-
-        public static (EffectKind, float) AdvancedEffect(float budget, List<EffectKind> Effects)
+        /*
+        public static (EffectKind, float, float) AdvancedEffect(float budget, List<EffectKind> Effects)
         {
             Dictionary<EffectKind, float> PriceList = EffectPriceList.Basic();
             int i = Random.Range(0, PriceList.Count);
@@ -89,9 +91,9 @@ namespace Assets.Scripts.ArtifactScripts.Generation
                 return BasicEffect(budget, Effects);
 
             float value = budget / PriceList[kind];
-            return (kind, value);
+            return (kind, value, budget);
         }
-
+        */
 
     }
 }

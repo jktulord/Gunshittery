@@ -12,16 +12,16 @@ namespace Assets.Scripts.ArtifactScripts.Generation
     {
         public static ArtifactStats Artifact1()
         {
-            ArtifactStats artifact = new ArtifactStats("NoName", "NoDescription");
+            ArtifactStats artifact = new ArtifactStats("An Artifact", "NoDescription");
             Dictionary<EffectKind, float> PriceList = EffectPriceList.Basic();
             float budget = 10;
 
-            artifact.ProEffects = Generate.Effects(budget, PriceList);
+            artifact.ProEffects = Generate.Effects(budget, 1);
            
             Debug.Log("Item Budget: " + budget);
             Debug.Log("Deffect Generation Budget: " + budget * 0.75f);
-            artifact.Deffects1 = Generate.Effects(-budget * 0.75f, PriceList/*, new List<EffectKind>(artifact.ProEffects.Keys)*/);
-            artifact.Deffects2 = Generate.Effects(-budget * 0.75f, PriceList/*, new List<EffectKind>(artifact.Deffects1.Keys)*/);
+            artifact.Deffects1 = Generate.Effects(-budget * 0.75f, Random.Range(1, 3)/*, new List<EffectKind>(artifact.ProEffects.Keys)*/);
+            artifact.Deffects2 = Generate.Effects(-budget * 0.75f, Random.Range(1, 3)/*, new List<EffectKind>(artifact.Deffects1.Keys)*/);
             return artifact;
         }
 
